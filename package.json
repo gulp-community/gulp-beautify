@@ -1,7 +1,7 @@
 {
   "name": "gulp-beautify",
   "description": "Asset beautification using node-beautify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "http://github.com/wearefractal/gulp-beautify",
   "repository": "git://github.com/wearefractal/gulp-beautify.git",
   "author": "Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
@@ -10,8 +10,9 @@
     "gulpplugin"
   ],
   "dependencies": {
-    "event-stream": "*",
-    "node-beautify": "0.0.x"
+    "event-stream": "~3.0.18",
+    "node-beautify": "0.0.2",
+    "gulp-util": "~1.2.0"
   },
   "devDependencies": {
     "mocha": "*",
