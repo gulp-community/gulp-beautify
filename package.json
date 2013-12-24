@@ -1,7 +1,7 @@
 {
   "name": "gulp-beautify",
   "description": "Asset beautification using node-beautify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "http://github.com/wearefractal/gulp-beautify",
   "repository": "git://github.com/wearefractal/gulp-beautify.git",
   "author": "Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
