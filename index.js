@@ -3,7 +3,7 @@ var es = require('event-stream'),
 
 module.exports = function(opt){
   function modifyFile(file, cb){
-    file.contents = beautify.beautifyJs(String(file.contents), opt);
+    file.contents = new Buffer(beautify.beautifyJs(String(file.contents), opt));
     cb(null, file);
   }
 
