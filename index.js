@@ -3,7 +3,12 @@ var es = require('event-stream'),
 
 module.exports = function(opt){
   function modifyFile(file, cb){
-    file.contents = new Buffer(beautify.beautifyJs(String(file.contents), opt));
+    if (file.isNull()) return cb(null, file); // pass along
+    if (file.isStream()) return cb(new Error("gulp-beautify: Streaming not supported"));
+
+    var str = file.contents.toString('utf8');
+
+    file.contents = new Buffer(beautify.beautifyJs(str, opt));
     cb(null, file);
   }
 
