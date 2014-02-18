@@ -1,40 +1,20 @@
 var es = require('event-stream'),
   beautify = require('node-beautify'),
-  RcFinder = require('rcfinder'),
-  path = require('path');
+  RcLoader = require('rcloader');
 
-var rcFinder = new RcFinder('.jsbeautifyrc', { loader: 'async' });
-
-module.exports = function(opt){
-  opt = opt || {};
-  var findConfigFiles = true;
-
-  if (typeof opt.auto === 'boolean') {
-    findConfigFiles = opt.auto;
-  }
+module.exports = function(opts){
+  var rcLoader = new RcLoader('.jsbeautifyrc', opts, { loader: 'async' });
 
   function modifyFile(file, cb){
     if (file.isNull()) return cb(null, file); // pass along
     if (file.isStream()) return cb(new Error("gulp-beautify: Streaming not supported"));
+    rcLoader.for(file.path, function (err, opts) {
+      if (err) return cb(err);
 
-    var str = file.contents.toString('utf8');
-    var fileOpts = opt;
-
-    function lint() {
-      file.contents = new Buffer(beautify.beautifyJs(str, fileOpts));
+      var str = file.contents.toString('utf8');
+      file.contents = new Buffer(beautify.beautifyJs(str, opts));
       cb(null, file);
-    }
-
-    if (findConfigFiles) {
-      rcFinder.find(path.dirname(file.path), function (err, opts) {
-        if (err) return cb(err);
-        fileOpts = opts;
-        lint();
-      });
-      return;
-    }
-
-    lint();
+    });
   }
 
   return es.map(modifyFile);

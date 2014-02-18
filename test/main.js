@@ -30,55 +30,5 @@ describe('gulp-beautify', function() {
       });
       stream.write(fakeFile);
     });
-
-    it('should get configuration from a .jsbeautifyrc file', function(done) {
-      var stream = beautify();
-      var fakeFile = new gutil.File({
-        path: __dirname + '/fixtures/fake/file.js',
-        base: __dirname + '/fixtures/fake/',
-        cwd: __dirname,
-        contents: new Buffer('function test(){console.log("test");}')
-      });
-
-      var expected = nbeautify.beautifyJs(String(fakeFile.contents), {indentSize: 2});
-      stream.on('error', done);
-      stream.on('data', function(newFile){
-        should.exist(newFile);
-        should.exist(newFile.path);
-        should.exist(newFile.relative);
-        should.exist(newFile.contents);
-
-        newFile.path.should.equal(__dirname + '/fixtures/fake/file.js');
-        newFile.relative.should.equal('file.js');
-        String(newFile.contents).should.equal(expected);
-        done();
-      });
-      stream.write(fakeFile);
-    });
-
-    it('should not get configuration when auto: false', function(done) {
-      var stream = beautify({ auto: false });
-      var fakeFile = new gutil.File({
-        path: __dirname + '/fixtures/fake/file.js',
-        base: __dirname + '/fixtures/fake/',
-        cwd: __dirname,
-        contents: new Buffer('function test(){console.log("test");}')
-      });
-
-      var expected = nbeautify.beautifyJs(String(fakeFile.contents));
-      stream.on('error', done);
-      stream.on('data', function(newFile){
-        should.exist(newFile);
-        should.exist(newFile.path);
-        should.exist(newFile.relative);
-        should.exist(newFile.contents);
-
-        newFile.path.should.equal(__dirname + '/fixtures/fake/file.js');
-        newFile.relative.should.equal('file.js');
-        String(newFile.contents).should.equal(expected);
-        done();
-      });
-      stream.write(fakeFile);
-    });
   });
 });
