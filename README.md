@@ -30,7 +30,13 @@ gulp.task('beautify', function() {
 
 ## Options
 
-The options object is passed directly to [node-beautify](https://github.com/fshost/node-beautify)
+Plugin options:
+
+- `lookup`
+  - Default is `true`
+  - When `false` do not lookup `.jsbeautifyrc` files, which are JSON encoded configuration files for [node-beautify](https://github.com/fshost/node-beautify#default-options).
+
+You can pass in any other options and it passes them directly to [node-beautify](https://github.com/fshost/node-beautify).
 
 ## LICENSE
 
