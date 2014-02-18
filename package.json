@@ -12,7 +12,8 @@
   "dependencies": {
     "event-stream": "~3.0.18",
     "node-beautify": "0.0.2",
-    "gulp-util": "~2.2.1"
+    "gulp-util": "~2.2.1",
+    "rcloader": "~0.1.0"
   },
   "devDependencies": {
     "mocha": "*",
