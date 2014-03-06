@@ -22,9 +22,9 @@
 var beautify = require('gulp-beautify');
 
 gulp.task('beautify', function() {
-  gulp.files('./src/*.js')
+  gulp.src('./src/*.js')
     .pipe(beautify({indentSize: 2}))
-    .pipe(gulp.folder('./public/'))
+    .pipe(gulp.dest('./public/'))
 });
 ```
 
