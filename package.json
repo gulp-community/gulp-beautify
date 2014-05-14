@@ -10,14 +10,14 @@
     "gulpplugin"
   ],
   "dependencies": {
-    "event-stream": "~3.0.18",
+    "event-stream": "^3.0.18",
     "node-beautify": "0.0.2",
-    "gulp-util": "~2.2.1",
-    "rcloader": "~0.1.0"
+    "gulp-util": "^2.2.1",
+    "rcloader": "^0.1.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "mocha": "^1.18.2",
+    "should": "^3.3.1"
   },
   "scripts": {
     "test": "mocha"
