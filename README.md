@@ -1,9 +1,9 @@
-![status](https://secure.travis-ci.org/wearefractal/gulp-beautify.png?branch=master)
+[![status](https://secure.travis-ci.org/wearefractal/gulp-beautify.png?branch=master)](https://travis-ci.org/wearefractal/gulp-beautify)
 
 ## Information
 
 <table>
-<tr> 
+<tr>
 <td>Package</td><td>gulp-beautify</td>
 </tr>
 <tr>
@@ -42,7 +42,7 @@ You can pass in any other options and it passes them directly to [node-beautify]
 
 (MIT License)
 
-Copyright (c) 2013 Fractal <contact@wearefractal.com>
+Copyright (c) 2014 Fractal <contact@wearefractal.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
