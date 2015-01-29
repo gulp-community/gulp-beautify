@@ -9,10 +9,10 @@ describe('gulp-beautify', function() {
     it('should concat two files', function(done) {
       var stream = beautify({indentSize: 2});
       var fakeFile = new gutil.File({
-        path: "/home/contra/test/file.js",
-        base: "/home/contra/test/",
-        cwd: "/home/contra/",
-        contents: new Buffer("function test(){console.log('test');}")
+        path: '/home/contra/test/file.js',
+        base: '/home/contra/test/',
+        cwd: '/home/contra/',
+        contents: new Buffer('function test(){console.log("test");}')
       });
 
       var expected = nbeautify.beautifyJs(String(fakeFile.contents), {indentSize: 2});
@@ -23,8 +23,8 @@ describe('gulp-beautify', function() {
         should.exist(newFile.relative);
         should.exist(newFile.contents);
 
-        newFile.path.should.equal("/home/contra/test/file.js");
-        newFile.relative.should.equal("file.js");
+        newFile.path.should.equal('/home/contra/test/file.js');
+        newFile.relative.should.equal('file.js');
         String(newFile.contents).should.equal(expected);
         done();
       });
