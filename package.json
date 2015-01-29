@@ -10,12 +10,12 @@
     "gulpplugin"
   ],
   "dependencies": {
-    "event-stream": "^3.1.7",
-    "gulp-util": "^2.2.20",
+    "event-stream": "^3.2.1",
     "node-beautify": "0.0.2",
     "rcloader": "^0.1.2"
   },
   "devDependencies": {
+    "gulp-util": "^3.0.2",
     "mocha": "^1.21.5",
     "should": "^3.3.2"
   },
