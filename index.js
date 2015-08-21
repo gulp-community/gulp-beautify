@@ -1,5 +1,5 @@
 var es = require('event-stream');
-var beautify = require('node-beautify');
+var beautify = require('js-beautify');
 var RcLoader = require('rcloader');
 
 module.exports = function(opts) {
