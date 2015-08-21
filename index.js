@@ -1,5 +1,5 @@
 var es = require('event-stream');
-var beautify = require('node-beautify');
+var beautify = require('js-beautify').js_beautify;
 var RcLoader = require('rcloader');
 
 module.exports = function(opts) {
@@ -12,7 +12,7 @@ module.exports = function(opts) {
       if (err) return cb(err);
 
       var str = file.contents.toString('utf8');
-      file.contents = new Buffer(beautify.beautifyJs(str, opts));
+      file.contents = new Buffer(beautify(str, opts));
       cb(null, file);
     });
   }
