@@ -7,7 +7,7 @@ require('mocha');
 describe('gulp-beautify', function() {
   describe('beautify()', function() {
     it('should concat two files', function(done) {
-      var stream = beautify({indentSize: 2});
+      var stream = beautify({indent_size: 2});
       var fakeFile = new gutil.File({
         path: '/home/contra/test/file.js',
         base: '/home/contra/test/',
