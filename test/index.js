@@ -1,6 +1,5 @@
 var beautify = require('../');
 var should = require('should');
-var nbeautify = require('node-beautify');
 var gutil = require('gulp-util');
 require('mocha');
 
@@ -15,7 +14,7 @@ describe('gulp-beautify', function() {
         contents: new Buffer('function test(){console.log("test");}')
       });
 
-      var expected = nbeautify.beautifyJs(String(fakeFile.contents), {indentSize: 2});
+      var expected = "function test() {\n  console.log(\"test\");\n}";
       stream.on('error', done);
       stream.on('data', function(newFile){
         should.exist(newFile);

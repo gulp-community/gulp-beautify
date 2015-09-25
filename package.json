@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "gulp-util": "^3.0.2",
-    "mocha": "^1.21.5",
-    "should": "^3.3.2"
+    "mocha": "^2.3.3",
+    "should": "^7.1.0"
   },
   "scripts": {
     "test": "mocha"
