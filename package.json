@@ -12,13 +12,13 @@
   ],
   "dependencies": {
     "js-beautify": "^1.5.10",
-    "rcloader": "^0.1.2",
+    "rcloader": "^0.2.1",
     "through2": "^2.0.0"
   },
   "devDependencies": {
-    "gulp-util": "^3.0.2",
-    "mocha": "^2.3.3",
-    "should": "^7.1.0"
+    "mocha": "^3.0.0",
+    "should": "^11.0.0",
+    "vinyl": "^2.0.0"
   },
   "scripts": {
     "test": "mocha"

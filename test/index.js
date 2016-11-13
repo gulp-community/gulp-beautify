@@ -1,13 +1,13 @@
 var beautify = require('../');
 var should = require('should');
-var gutil = require('gulp-util');
+var File = require('vinyl');
 require('mocha');
 
 describe('gulp-beautify', function() {
   describe('beautify()', function() {
     it('should concat two files', function(done) {
       var stream = beautify({indent_size: 2});
-      var fakeFile = new gutil.File({
+      var fakeFile = new File({
         path: '/home/contra/test/file.js',
         base: '/home/contra/test/',
         cwd: '/home/contra/',
