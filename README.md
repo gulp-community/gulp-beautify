@@ -1,4 +1,4 @@
-[![status](https://secure.travis-ci.org/wearefractal/gulp-beautify.png?branch=master)](https://travis-ci.org/wearefractal/gulp-beautify)
+[![status](https://secure.travis-ci.org/contra/gulp-beautify.png?branch=master)](https://travis-ci.org/contra/gulp-beautify)
 
 # Information
 <table><br><tr><br><td>Package</td><td>gulp-beautify</td><br></tr><br><tr><br><td>Description</td><br><td>Asset beautification using node-beautify</td><br></tr><br><tr><br><td>Node Version</td><br><td>>= 0.4</td><br></tr><br></table>
