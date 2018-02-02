@@ -1,6 +1,7 @@
 var beautify = require('../');
 var should = require('should');
 var File = require('vinyl');
+var path = require('path');
 require('mocha');
 
 describe('gulp-beautify', function() {
@@ -22,7 +23,7 @@ describe('gulp-beautify', function() {
         should.exist(newFile.relative);
         should.exist(newFile.contents);
 
-        newFile.path.should.equal('/home/contra/test/file.js');
+        newFile.path.should.equal(path.normalize('/home/contra/test/file.js'));
         newFile.relative.should.equal('file.js');
         String(newFile.contents).should.equal(expected);
         done();
