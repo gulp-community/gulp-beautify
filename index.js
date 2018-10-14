@@ -12,13 +12,13 @@ module.exports = function(opts) {
     rcLoader.for(file.path, function(err, opts) {
       if (err) return cb(err);
       var extname = path.extname(file.path);
-      var parser = /^\.html?$/.test(extname)
+      var beautifier = /^\.html?$/.test(extname)
         ? beautify.html
         : /^\.css$/.test(extname)
           ? beautify.css
           : beautify.js;
       var str = file.contents.toString('utf8');
-      file.contents = new Buffer.from(parser(str, opts));
+      file.contents = new Buffer.from(beautifier(str, opts));
       cb(null, file);
     });
   }
