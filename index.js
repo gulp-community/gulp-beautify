@@ -8,11 +8,11 @@ module.exports = function(opts) {
   function modifyFile(file, enc, cb) {
     if (file.isNull()) return cb(null, file); // pass along
     if (file.isStream()) return cb(new Error('gulp-beautify: Streaming not supported'));
-    rcLoader.for(file.path, function (err, opts) {
+    rcLoader.for(file.path, function(err, opts) {
       if (err) return cb(err);
 
       var str = file.contents.toString('utf8');
-      file.contents = new Buffer(beautify(str, opts));
+      file.contents = new Buffer.from(beautify(str, opts));
       cb(null, file);
     });
   }
