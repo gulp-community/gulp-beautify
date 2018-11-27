@@ -29,6 +29,31 @@ describe('gulp-beautify', function() {
       });
       stream.write(fakeFile);
     });
+
+    it('should be the same with the js export', function(done) {
+      var stream = beautify.js({ indent_size: 2 });
+      var fakeFile = new File({
+        path: '/home/contra/test/file.js',
+        base: '/home/contra/test/',
+        cwd: '/home/contra/',
+        contents: new Buffer.from('function test(){console.log("test");}')
+      });
+
+      var expected = 'function test() {\n  console.log("test");\n}';
+      stream.on('error', done);
+      stream.on('data', function(newFile) {
+        should.exist(newFile);
+        should.exist(newFile.path);
+        should.exist(newFile.relative);
+        should.exist(newFile.contents);
+
+        newFile.path.should.equal('/home/contra/test/file.js');
+        newFile.relative.should.equal('file.js');
+        String(newFile.contents).should.equal(expected);
+        done();
+      });
+      stream.write(fakeFile);
+    });
   });
 
   describe('beautify() – html', function() {
@@ -50,7 +75,7 @@ describe('gulp-beautify', function() {
 </html>`;
 
     it('should beautify .html', function(done) {
-      var stream = beautify({ indent_size: 2 });
+      var stream = beautify.html({ indent_size: 2 });
       var fakeFile = getHtmlFile(`html`);
 
       stream.on('error', done);
@@ -69,7 +94,7 @@ describe('gulp-beautify', function() {
     });
 
     it('should beautify .htm', function(done) {
-      var stream = beautify({ indent_size: 2 });
+      var stream = beautify.html({ indent_size: 2 });
       var fakeFile = getHtmlFile(`htm`);
 
       stream.on('error', done);
@@ -90,7 +115,7 @@ describe('gulp-beautify', function() {
 
   describe('beautify() – css', function() {
     it('should beautify .css', function(done) {
-      var stream = beautify({ indent_size: 2 });
+      var stream = beautify.css({ indent_size: 2 });
       var fakeFile = new File({
         path: '/home/contra/test/file.css',
         base: '/home/contra/test/',

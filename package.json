@@ -12,7 +12,6 @@
   ],
   "dependencies": {
     "js-beautify": "^1.5.10",
-    "rcloader": "^0.2.1",
     "through2": "^2.0.0"
   },
   "devDependencies": {
