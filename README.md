@@ -1,30 +1,50 @@
 [![status](https://secure.travis-ci.org/contra/gulp-beautify.png?branch=master)](https://travis-ci.org/contra/gulp-beautify)
 
 # Information
+
 <table><br><tr><br><td>Package</td><td>gulp-beautify</td><br></tr><br><tr><br><td>Description</td><br><td>Asset beautification using node-beautify</td><br></tr><br><tr><br><td>Node Version</td><br><td>>= 0.4</td><br></tr><br></table>
 
 # Usage
+
 This is a gulp plugin for js-beautify.
 
 ```javascript
 var beautify = require('gulp-beautify');
 
 gulp.task('beautify', function() {
-  gulp.src('./src/*.js')
-    .pipe(beautify({indent_size: 2}))
-    .pipe(gulp.dest('./public/'))
+  gulp
+    .src('./src/*.js')
+    .pipe(beautify({ indent_size: 2 }))
+    .pipe(gulp.dest('./public/'));
+});
+```
+
+As with js-beautify you can use it for [HTML & CSS](https://github.com/beautify-web/js-beautify#css--html):
+
+```javascript
+var beautifyHtml = require('gulp-beautify').html;
+var beautifyCss = require('gulp-beautify').css;
+
+gulp.task('beautify-html', function() {
+  gulp
+    .src('./src/*.html')
+    .pipe(beautifyHtml({ indent_size: 2 }))
+    .pipe(gulp.dest('./public/'));
+});
+gulp.task('beautify-css', function() {
+  gulp
+    .src('./src/*.css')
+    .pipe(beautifyCss({ indent_size: 2 }))
+    .pipe(gulp.dest('./public/'));
 });
 ```
 
 # Options
-Plugin options:
-- `lookup`
-  - Default is `true`
-  - When `false` do not lookup `.jsbeautifyrc` files, which are JSON encoded configuration files for [js-beautify](https://github.com/beautify-web/js-beautify#options).
 
-You can pass in any other options and it passes them directly to [js-beautify](https://github.com/beautify-web/js-beautify).
+Any options will be passed directly to [js-beautify](https://github.com/beautify-web/js-beautify).
 
 # LICENSE
+
 (MIT License)
 
 Copyright (c) 2015 Fractal [contact@wearefractal.com](mailto:contact@wearefractal.com)
