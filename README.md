@@ -12,9 +12,9 @@ This is a gulp plugin for js-beautify.
 var beautify = require('gulp-beautify');
 
 gulp.task('beautify', function() {
-  gulp
+  return gulp
     .src('./src/*.js')
-    .pipe(beautify({ indent_size: 2 }))
+    .pipe(beautify.js({ indent_size: 2 }))
     .pipe(gulp.dest('./public/'));
 });
 ```
@@ -22,19 +22,27 @@ gulp.task('beautify', function() {
 As with js-beautify you can use it for [HTML & CSS](https://github.com/beautify-web/js-beautify#css--html):
 
 ```javascript
-var beautifyHtml = require('gulp-beautify').html;
-var beautifyCss = require('gulp-beautify').css;
+var beautify = require('gulp-beautify');
 
 gulp.task('beautify-html', function() {
-  gulp
+  return gulp
     .src('./src/*.html')
-    .pipe(beautifyHtml({ indent_size: 2 }))
+    .pipe(beautify.html({ indent_size: 2 }))
     .pipe(gulp.dest('./public/'));
 });
 gulp.task('beautify-css', function() {
-  gulp
+  return gulp
     .src('./src/*.css')
-    .pipe(beautifyCss({ indent_size: 2 }))
+    .pipe(beautify.css({ indent_size: 2 }))
+    .pipe(gulp.dest('./public/'));
+});
+
+gulp.task('beautify-js', function() {
+  // gulp-beautify exports are identical to js-beautify programmatic access
+  // so beautify() is the old pattern for beautify.js()
+  return gulp
+    .src('./src/*.js')
+    .pipe(beautify({ indent_size: 2 }))
     .pipe(gulp.dest('./public/'));
 });
 ```
