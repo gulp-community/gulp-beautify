@@ -15,7 +15,8 @@
     "through2": "^3.0.0"
   },
   "devDependencies": {
-    "mocha": "^5.2.0",
+    "mocha": "3.5.3",
+    "readable-stream": "2.3.6",
     "should": "^13.2.3",
     "vinyl": "^2.0.0"
   },
