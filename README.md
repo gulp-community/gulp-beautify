@@ -2,7 +2,7 @@
 
 [![status](https://secure.travis-ci.org/gulp-community/gulp-beautify.png?branch=master)](https://travis-ci.org/gulp-community/gulp-beautify)
 
-<table><br><tr><br><td>Package</td><td>gulp-beautify</td><br></tr><br><tr><br><td>Description</td><br><td>Asset beautification using node-beautify</td><br></tr><br><tr><br><td>Node Version</td><br><td>>= 0.10</td><br></tr><br></table>
+<table><tr><td>Package</td><td>gulp-beautify</td></tr><tr><td>Description</td><td>Asset beautification using node-beautify</td></tr><tr><td>Node Version</td><td>>= 0.10</td></tr></table>
 
 ## Usage
 
