@@ -1,0 +1,2 @@
+mocha is stuck to v3 to allow testing on Node versions 0.10/0.12
+readable-stream is stuck to v2 on development environment for the same reasons
