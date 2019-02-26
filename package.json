@@ -1,9 +1,9 @@
 {
   "name": "gulp-beautify",
-  "description": "Asset beautification using node-beautify",
+  "description": "Asset beautification using js-beautify",
   "version": "2.0.1",
-  "homepage": "http://github.com/wearefractal/gulp-beautify",
-  "repository": "git://github.com/wearefractal/gulp-beautify.git",
+  "homepage": "http://github.com/gulp-community/gulp-beautify",
+  "repository": "git://github.com/gulp-community/gulp-beautify.git",
   "author": "Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
   "main": "./index.js",
   "keywords": [
@@ -24,12 +24,7 @@
     "test": "mocha"
   },
   "engines": {
-    "node": ">= 0.9.0"
+    "node": ">= 0.10.0"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/wearefractal/gulp-beautify/raw/master/LICENSE"
-    }
-  ]
+  "license": "MIT"
 }
